@@ -1,6 +1,6 @@
 # Evidências de Operating Systems
 
-Duas partes: os **textos** que o `12-coletar-evidencias.ps1` gera em `C:\oasis\evidencias` (copie todos para esta pasta) e os **prints** abaixo, tirados dentro da VM. Salve os prints aqui com estes nomes e faça commit.
+Duas partes: as **saídas de comandos**, geradas pelo `12-coletar-evidencias.ps1` em `C:\oasis\evidencias`, e os **prints** tirados dentro da VM.
 
 ## Saídas de comandos (geradas pelo script 12)
 
@@ -25,7 +25,7 @@ Duas partes: os **textos** que o `12-coletar-evidencias.ps1` gera em `C:\oasis\e
 
 ## Prints
 
-| Arquivo | O que capturar |
+| Arquivo | O que mostra |
 | --- | --- |
 | `p01-vm.png` | Configuração da VM (CPU, memória, rede externa ou bridge) |
 | `p02-gerenciador-do-servidor.png` | Gerenciador do Servidor com AD DS, DNS e IIS |

@@ -1,6 +1,6 @@
 ﻿#Requires -RunAsAdministrator
 # Passo 12 · Coleta as evidências em texto (saídas de comandos) em C:\oasis\evidencias.
-# Copie a pasta para evidencias no repositório oasis-operating-systems e faça commit.
+# Copie a pasta para evidencias no repositório oasis-operating-systems.
 
 . "$PSScriptRoot\00-config.ps1"
 . "$PSScriptRoot\funcoes.ps1"

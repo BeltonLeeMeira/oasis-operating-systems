@@ -64,7 +64,7 @@ $conteudo = @(
     "OASIS_MQTT_HMAC_CHAVE=$($Oasis.MqttChaveHmac)"
     "OASIS_MODELO_DIR=$(Join-Path $Oasis.Raiz 'ml\modelo')"
     "OASIS_LOG_ARQUIVO=$(Join-Path $Oasis.Raiz 'logs\api.log')"
-    '# /docs desligado no servidor (mude para true se quiser mostrar no video)'
+    '# /docs desligado no servidor (mude para true para abrir a documentacao interativa)'
     'OASIS_DOCS_HABILITADA=false'
 )
 [IO.File]::WriteAllLines($arquivoEnv, $conteudo)

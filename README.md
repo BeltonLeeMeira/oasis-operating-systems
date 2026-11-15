@@ -85,7 +85,7 @@ Rode na ordem, sempre no PowerShell como Administrador. Os scripts funcionam no 
 | 08 | `08-acesso-remoto-e-firewall.ps1` | RDP com NLA e WinRM só da rede de administração, porta 80 aberta, 5432 bloqueada | Não |
 | 09 | `09-monitoramento.ps1` | Alertas de CPU, disco e memória, registro de desempenho, modo de exibição "Oásis" | Não |
 | 10 | `10-tolerancia-a-falhas.ps1` | Recuperação automática dos serviços e o vigia (tarefa a cada minuto) | Não |
-| 11 | `11-teste-de-falha.ps1` | Cinco quedas cronometradas; **grave a tela** | Não |
+| 11 | `11-teste-de-falha.ps1` | Cinco quedas cronometradas | Não |
 | 12 | `12-coletar-evidencias.ps1` | Saídas de comandos em `C:\oasis\evidencias` | Não |
 | 13 | `13-extra-file-server-dfs.ps1` | Extra: pasta de boletins do posto com NTFS por grupo e namespace DFS `\\oasis.local\Oasis` | Não |
 
@@ -100,7 +100,7 @@ Rode na ordem, sempre no PowerShell como Administrador. Os scripts funcionam no 
 
 ### Auditoria pelo Gerenciamento de Política de Grupo
 
-O passo 07 já liga as subcategorias de auditoria no servidor com o `auditpol`, e o efeito é imediato. Para gerenciar a mesma auditoria pelo domínio, que é o que aparece bem no vídeo, configure também a GPO:
+O passo 07 já liga as subcategorias de auditoria no servidor com o `auditpol`, e o efeito é imediato. Para gerenciar a mesma auditoria pelo domínio, configure também a GPO:
 
 1. `gpmc.msc` → Domínios → `oasis.local` → **Domain Controllers** → **Oasis - Servidor** → Editar.
 2. Configuração do Computador → Políticas → Configurações do Windows → Configurações de Segurança → **Configuração Avançada de Política de Auditoria** → Políticas de Auditoria.
@@ -132,22 +132,9 @@ O `11-teste-de-falha.ps1` derruba a aplicação de cinco jeitos e cronometra a v
 | Log da API | `C:\oasis\logs\api.log`; saída do uvicorn em `C:\oasis\logs\uvicorn_*.log` |
 | Desempenho | `C:\oasis\logs\perfmon\desempenho*.blg` (abra no Monitor de Desempenho) |
 
-## Roteiro do vídeo (até 7 minutos)
-
-| Tempo | O que mostrar |
-| --- | --- |
-| 0:00–0:30 | O Oásis em uma frase e o que esta VM hospeda (Ficha na tela) |
-| 0:30–1:30 | Rede e identidade: Gerenciador do Servidor com as funções, `ipconfig`, Usuários e Computadores do AD (OUs, grupos), DNS com `api.oasis.local`, `nslookup` e `Test-NetConnection` |
-| 1:30–2:45 | Aplicação no IIS: site e pool (sem código gerenciado, AlwaysRunning), módulo HttpPlatformHandler, `web.config`, NTFS de `C:\oasis\config`, página aberta no PC e no iPhone |
-| 2:45–3:30 | GPO e acesso remoto: GPMC com as duas GPOs, RDP como `OASIS\admin.oasis` mostrando o aviso de logon |
-| 3:30–4:30 | Monitoramento: `Oasis-Alertas` no Monitor de Desempenho, `.\09-monitoramento.ps1 -Testar` e o evento 2031 |
-| 4:30–6:00 | Teste de falha: testes 1, 3 e 4 do script 11, com os eventos 7031, 1001 e 1002 (os testes 2 e 5 ficam no `teste-de-falha.txt`) |
-| 6:00–6:40 | Logs e auditoria: visão "Oásis", evento 4663 do `oasis.env`, log do IIS com os pedidos |
-| 6:40–7:00 | Funcionamento completo: no Wokwi, a temperatura sobe e o alerta aparece na página hospedada e no app |
-
 ## Evidências
 
-Prints e saídas de comandos ficam em [`evidencias/`](evidencias/). A lista do que capturar está em [`evidencias/README.md`](evidencias/README.md).
+Prints e saídas de comandos ficam em [`evidencias/`](evidencias/). A lista completa está em [`evidencias/README.md`](evidencias/README.md).
 
 ## Problemas comuns
 

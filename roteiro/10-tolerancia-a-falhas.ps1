@@ -42,4 +42,4 @@ Escrever-Ok 'tarefa Oasis-Vigia (roda como SISTEMA)'
 Escrever-Passo 'Conferência'
 foreach ($servico in @('WAS', 'W3SVC', $Oasis.ServicoBanco)) { sc.exe qfailure $servico }
 Get-ScheduledTask -TaskName 'Oasis-Vigia' | Format-Table TaskName, State -AutoSize
-Write-Host 'Próximo: 11-teste-de-falha.ps1 (grave a tela!)' -ForegroundColor Yellow
+Write-Host 'Próximo: 11-teste-de-falha.ps1' -ForegroundColor Yellow

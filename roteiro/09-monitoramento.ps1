@@ -6,7 +6,7 @@
 #  - Os dois voltam a rodar quando o servidor reinicia
 #  - Modo de exibição "Oásis" no Visualizador de Eventos
 #
-# Para demonstrar no vídeo:  .\09-monitoramento.ps1 -Testar
+# Para demonstrar os alertas:  .\09-monitoramento.ps1 -Testar
 #   cria um conjunto temporário com limites que disparam na hora e gera 60 s de CPU alta.
 
 param([switch]$Testar)
@@ -70,7 +70,7 @@ Escrever-Ok "$cpu > 85"
 Escrever-Ok "$disco < 15"
 Escrever-Ok "$memoria < 500"
 
-Escrever-Passo 'Registro de desempenho Oasis-Desempenho (para os gráficos do vídeo)'
+Escrever-Passo 'Registro de desempenho Oasis-Desempenho'
 $nomeLog = 'Oasis-Desempenho'
 logman stop $nomeLog 2>&1 | Out-Null
 logman delete $nomeLog 2>&1 | Out-Null

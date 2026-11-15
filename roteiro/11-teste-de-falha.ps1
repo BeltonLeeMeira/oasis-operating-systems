@@ -1,5 +1,5 @@
 ﻿#Requires -RunAsAdministrator
-# Passo 11 · Teste de falha (grave a tela para o vídeo).
+# Passo 11 · Teste de falha.
 # Derruba a aplicação de cinco jeitos e mede quanto tempo ela leva para voltar sozinha:
 #   1. processo Python da API morto      -> o HttpPlatformHandler sobe outro no próximo pedido
 #   2. processo do pool (w3wp) morto     -> o WAS cria outro (pool AlwaysRunning)
