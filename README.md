@@ -2,7 +2,7 @@
 
 **Integrante:** Belton Lee Carr De Muzio Meira · RM560760 · 3ESPA
 
-Um Windows Server em VM que hospeda a aplicação web do Oásis no IIS, com domínio, DNS, banco, monitoramento, auditoria e recuperação automática de falhas. Tudo é configurado pelos scripts PowerShell da pasta [`roteiro/`](roteiro/), em ordem, e cada passo deixa evidências.
+Um Windows Server em VM que hospeda a aplicação web do Oásis no IIS, com domínio, DNS, servidor de arquivos, DFS, políticas de grupo, acesso remoto, banco, monitoramento, auditoria e recuperação automática de falhas. Tudo é configurado pelos scripts PowerShell da pasta [`roteiro/`](roteiro/), em ordem, e cada passo deixa evidências.
 
 ## Ficha da CitizenTech
 
@@ -29,6 +29,7 @@ Um Windows Server em VM que hospeda a aplicação web do Oásis no IIS, com dom�
                                      ├─ IIS ................ site "Oasis", pool "OasisPool"
                                      │    └─ HttpPlatformHandler ─► Python 3.13 (API Oásis + página pública)
                                      ├─ PostgreSQL 17 ...... só em localhost (5432 fechada para a rede)
+                                     ├─ File Server + DFS .. \\oasis.local\Oasis\Boletins, NTFS por grupo
                                      ├─ Monitor de Desempenho: alertas de CPU, disco e memória
                                      ├─ Vigia a cada minuto + recuperação automática dos serviços
                                      └─ GPOs, auditoria, RDP com NLA restrito aos administradores
@@ -47,7 +48,17 @@ Um Windows Server em VM que hospeda a aplicação web do Oásis no IIS, com dom�
 | Logs de auditoria e acompanhamento | 1 | Auditoria por subcategoria, auditoria de acesso (SACL) ao arquivo de segredos e ao código, modo de exibição "Oásis" no Visualizador de Eventos, logs do IIS e da API | 07, 09 | `10-gpo-e-auditoria`, `10-gpresult.html`, `12-eventos`, `13-logs-do-iis` |
 | Funcionamento completo | 2 | Página pública, app no iPhone, Painel do Posto e estação do Wokwi conversando com a API hospedada | 06 e vídeo | `14-aplicacao` e vídeo |
 
-O percurso do PDF também pede GPO e acesso remoto (passos 07 e 08). O passo 13 é um extra com File Server e DFS, serviços do semestre que a rubrica não cobra.
+## Serviços do semestre
+
+| Serviço | Como aparece no Oásis | Script |
+| --- | --- | --- |
+| DNS | Zona `oasis.local` com o registro `api`, zona reversa e encaminhadores | 02, 03 |
+| Active Directory | Floresta `oasis.local`, OUs, grupos `GG_Oasis_Admins` e `GG_Oasis_Operadores`, usuários e política de senha | 02, 03 |
+| File Server | Compartilhamento `Boletins` (relatórios de calor e listas do posto), com NTFS por grupo e enumeração baseada em acesso | 13 |
+| IIS | Site `Oasis` e pool `OasisPool`, que hospedam a API e a página pública | 04, 06 |
+| GPO | "Oasis - Operadores" e "Oasis - Servidor", com aviso de logon e auditoria | 07 |
+| RDS | Área de Trabalho Remota para administração, com NLA, só da rede de administração e só para `GG_Oasis_Admins`. A função Host de Sessão não foi instalada, porque o servidor é controlador de domínio | 08 |
+| DFS | Namespace de domínio `\\oasis.local\Oasis`, com a pasta `Boletins` | 13 |
 
 ## Antes de começar
 
@@ -87,7 +98,7 @@ Rode na ordem, sempre no PowerShell como Administrador. Os scripts funcionam no 
 | 10 | `10-tolerancia-a-falhas.ps1` | Recuperação automática dos serviços e o vigia (tarefa a cada minuto) | Não |
 | 11 | `11-teste-de-falha.ps1` | Cinco quedas cronometradas | Não |
 | 12 | `12-coletar-evidencias.ps1` | Saídas de comandos em `C:\oasis\evidencias` | Não |
-| 13 | `13-extra-file-server-dfs.ps1` | Extra: pasta de boletins do posto com NTFS por grupo e namespace DFS `\\oasis.local\Oasis` | Não |
+| 13 | `13-file-server-e-dfs.ps1` | File Server e DFS: pasta de boletins do posto com NTFS por grupo e namespace `\\oasis.local\Oasis`; grava a evidência `16-file-server-e-dfs.txt` | Não |
 
 ### Ligando as outras partes ao servidor
 

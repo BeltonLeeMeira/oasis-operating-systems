@@ -21,6 +21,7 @@ Duas partes: as **saídas de comandos**, geradas pelo `12-coletar-evidencias.ps1
 | `13-logs-do-iis.txt` | Últimas linhas do log do IIS e da API |
 | `14-aplicacao.txt` | `/health`, `/api/risco/agora` e a página pelo nome DNS |
 | `15-firewall-e-portas.txt` | Regras de firewall e portas escutando |
+| `16-file-server-e-dfs.txt` | Funções, compartilhamentos, NTFS e namespace DFS (gerada pelo script 13) |
 | `teste-de-falha.txt` | Linha do tempo do script 11 |
 
 ## Prints
@@ -47,3 +48,4 @@ Duas partes: as **saídas de comandos**, geradas pelo `12-coletar-evidencias.ps1
 | `p18-auditoria-4663.png` | Evento 4663: acesso ao `oasis.env` |
 | `p19-log-iis.png` | Log do IIS aberto com pedidos `/api` e `/health` |
 | `p20-rdp.png` | Área de Trabalho Remota como `OASIS\admin.oasis`, com o aviso de logon |
+| `p21-file-server-dfs.png` | Explorador de Arquivos em `\\oasis.local\Oasis\Boletins` e o Gerenciamento DFS com o namespace |
