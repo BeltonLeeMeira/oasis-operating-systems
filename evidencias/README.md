@@ -39,9 +39,7 @@ Ficam na pasta [`prints/`](prints/). O IPv6 público da rede foi ocultado nos pr
 | `p07-iis-modulo.png` | Módulos do IIS com o `httpPlatformHandler` |
 | `p08-ntfs-config.png` | Propriedades de `C:\oasis\config` → Segurança: só OasisPool, Administradores e SISTEMA |
 | `p09-pagina-no-pc.png` | Navegador do seu PC em `http://IP-da-VM/` |
-| `p10-app-no-iphone.png` | App no iPhone usando a API da VM |
 | `p11-perfmon-alertas.png` | Monitor de Desempenho → Conjuntos de Coletores de Dados → Definido pelo Usuário → Oasis-Alertas, com os limites |
-| `p12-evento-2031.png` | Visualizador de Eventos com um alerta de desempenho (2031) |
 | `p13-teste-de-falha.png` | Terminal do script 11 com os tempos de volta |
 | `p14-evento-7031.png` | Evento 7031 do W3SVC com a ação de recuperação |
 | `p15-vigia.png` | Eventos 1001 e 1002 da fonte Oasis |
@@ -49,5 +47,4 @@ Ficam na pasta [`prints/`](prints/). O IPv6 público da rede foi ocultado nos pr
 | `p17-gpo.png` | GPMC com "Oasis - Operadores" e "Oasis - Servidor" vinculadas |
 | `p18-auditoria-4663.png` | Evento 4663: acesso ao `oasis.env` |
 | `p19-log-iis.png` | Log do IIS aberto com pedidos `/api` e `/health` |
-| `p20-rdp.png` | Área de Trabalho Remota como `OASIS\admin.oasis`, com o aviso de logon |
 | `p21-file-server-dfs.png` | Explorador de Arquivos em `\\oasis.local\Oasis\Boletins` e o Gerenciamento DFS com o namespace |
