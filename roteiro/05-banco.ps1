@@ -21,7 +21,10 @@ Escrever-Ok "listen_addresses = 'localhost'"
 
 # ------------------------------------------------- usuário e banco
 Escrever-Passo 'Usuário e banco "oasis"'
-$senhaSuper = Converter-SenhaParaTexto (Read-Host 'Senha do superusuário "postgres"' -AsSecureString)
+$senhaSuper = Obter-SenhaInicial 'postgres' -SoLer
+if (-not $senhaSuper) {   # PostgreSQL instalado à mão: pede a senha escolhida na instalação
+    $senhaSuper = Converter-SenhaParaTexto (Read-Host 'Senha do superusuário "postgres"' -AsSecureString)
+}
 $senhaApp = Nova-Senha 24
 $env:PGPASSWORD = $senhaSuper
 try {

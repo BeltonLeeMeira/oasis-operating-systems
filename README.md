@@ -67,12 +67,13 @@ Um Windows Server em VM que hospeda a aplicação web do Oásis no IIS, com dom�
    - **VirtualBox**: placa de rede em modo **Bridge**.
 
    A rede precisa ser externa (ou bridge) para o iPhone e o seu PC enxergarem a VM.
-2. **IP.** Escolha um IP livre da sua rede, fora da faixa de DHCP do roteador, e ajuste [`roteiro/00-config.ps1`](roteiro/00-config.ps1) (IP, gateway e nome da placa).
-3. **Código.** Dentro da VM, copie os dois repositórios (**Code → Download ZIP** no GitHub, ou `git clone`): a aplicação, `oasis-soa`, em `C:\instaladores\oasis-soa`, e este, `oasis-operating-systems`, em `C:\instaladores\oasis-operating-systems`.
-4. **Instaladores.** Baixe para `C:\instaladores`:
-   - Python 3.13, Windows installer (64-bit): https://www.python.org/downloads/windows/
-   - HttpPlatformHandler v1.2 (x64): https://www.iis.net/downloads/microsoft/httpplatformhandler
-   - PostgreSQL 17 para Windows x86-64 (instalador da EDB): https://www.postgresql.org/download/windows/
+2. **Código e rede.** Dentro da VM, no PowerShell como Administrador:
+   ```powershell
+   irm https://raw.githubusercontent.com/BeltonLeeMeira/oasis-operating-systems/main/roteiro/preparar.ps1 | iex
+   ```
+   O `preparar.ps1` baixa os dois repositórios para `C:\instaladores` (a aplicação, `oasis-soa`, e este) e preenche o [`roteiro/00-config.ps1`](roteiro/00-config.ps1) com a placa, o IP e o gateway que a VM recebeu da rede. Para usar outro IP fixo, edite o `00-config.ps1` antes do passo 01.
+3. **Instaladores.** O `roteiro/baixar-instaladores.ps1` baixa para `C:\instaladores` o Python 3.13, o HttpPlatformHandler v1.2 (x64) e o PostgreSQL 17 (instalador da EDB). Também dá para baixar à mão: [Python](https://www.python.org/downloads/windows/), [HttpPlatformHandler](https://www.iis.net/downloads/microsoft/httpplatformhandler) e [PostgreSQL](https://www.postgresql.org/download/windows/).
+4. **Senhas.** A única senha digitada no roteiro é a do DSRM, no passo 02. As senhas iniciais dos usuários de exemplo e do superusuário do PostgreSQL são geradas pelos scripts e ficam em `C:\oasis\config\senhas-iniciais.txt`, que só Administradores leem.
 5. **PowerShell como Administrador:**
    ```powershell
    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass

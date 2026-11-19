@@ -34,6 +34,25 @@ function Nova-Senha([int]$tamanho = 24) {
     return $texto.Substring(0, $tamanho)
 }
 
+# Senhas iniciais (usuários de exemplo, superusuário do PostgreSQL): o script gera uma senha forte e
+# guarda em C:\oasis\config\senhas-iniciais.txt, que só Administradores e SYSTEM leem.
+# Se a chave já existe no arquivo, devolve a mesma senha (rodar o script de novo não troca nada).
+function Obter-SenhaInicial([string]$chave, [switch]$SoLer) {
+    $pasta = Join-Path $Oasis.Raiz 'config'
+    $arquivo = Join-Path $pasta 'senhas-iniciais.txt'
+    if (Test-Path $arquivo) {
+        $linha = Get-Content $arquivo | Where-Object { $_ -like "$chave=*" } | Select-Object -First 1
+        if ($linha) { return $linha.Substring($chave.Length + 1) }
+    }
+    if ($SoLer) { return $null }
+    New-Item -ItemType Directory -Force -Path $pasta | Out-Null
+    $senha = 'Oa' + (Nova-Senha 14) + '7x'   # maiúscula, minúscula e número: passa na política do domínio
+    Add-Content -Path $arquivo -Value "$chave=$senha" -Encoding UTF8
+    icacls $arquivo /inheritance:r /grant:r '*S-1-5-32-544:F' '*S-1-5-18:F' | Out-Null
+    Escrever-Ok "senha de '$chave' gerada e guardada em $arquivo"
+    return $senha
+}
+
 # Os nomes dos contadores de desempenho mudam com o idioma do Windows:
 # "\Processor(_Total)\% Processor Time" vira "\Processador(_Total)\% Tempo de Processador".
 # Esta função traduz o caminho em inglês para o idioma instalado (no Windows em inglês, nada muda).

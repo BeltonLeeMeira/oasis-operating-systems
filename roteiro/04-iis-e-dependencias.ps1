@@ -1,7 +1,7 @@
 ﻿#Requires -RunAsAdministrator
 # Passo 04 · Funções do IIS e dependências da aplicação: Python 3.13 (runtime),
 # HttpPlatformHandler (liga o IIS ao Python) e PostgreSQL 17 (banco).
-# Antes, deixe os três instaladores em C:\instaladores (links no README).
+# Antes, deixe os três instaladores em C:\instaladores (o baixar-instaladores.ps1 faz isso).
 
 . "$PSScriptRoot\00-config.ps1"
 . "$PSScriptRoot\funcoes.ps1"
@@ -45,8 +45,7 @@ Get-WebGlobalModule -Name 'httpPlatformHandler' | Format-Table Name, Image -Auto
 Escrever-Passo 'Banco: PostgreSQL 17'
 if (-not (Get-Service -Name $Oasis.ServicoBanco -ErrorAction SilentlyContinue)) {
     $instalador = Achar-Instalador 'postgresql-17*-windows-x64.exe' 'https://www.postgresql.org/download/windows/'
-    $senha = Read-Host 'Crie a senha do superusuário "postgres" (sem aspas nem espaços)' -AsSecureString
-    $texto = Converter-SenhaParaTexto $senha
+    $texto = Obter-SenhaInicial 'postgres'
     Write-Host '    instalando sem janelas, leva alguns minutos...'
     Start-Process -FilePath $instalador -Wait -ArgumentList '--mode', 'unattended', '--unattendedmodeui', 'minimal',
         '--superpassword', "`"$texto`"", '--serverport', '5432', '--disable-components', 'stackbuilder'

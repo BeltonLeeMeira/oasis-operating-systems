@@ -62,7 +62,7 @@ Garantir-Grupo 'GG_Oasis_Operadores' 'Agentes do posto: usam o Painel do Posto e
 
 # ------------------------------------------------- usuários de exemplo
 Escrever-Passo 'Usuários de exemplo (fictícios)'
-$senha = Read-Host 'Senha inicial dos usuários (10+ caracteres, com maiúscula, número e símbolo)' -AsSecureString
+$senha = ConvertTo-SecureString (Obter-SenhaInicial 'usuarios-de-exemplo') -AsPlainText -Force
 
 function Garantir-Usuario([string]$login, [string]$nome, [string]$ou, [string]$grupo) {
     if (-not (Get-ADUser -Filter "SamAccountName -eq '$login'" -ErrorAction SilentlyContinue)) {
