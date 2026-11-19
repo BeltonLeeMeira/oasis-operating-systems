@@ -85,8 +85,8 @@ if (-not (Test-Path "IIS:\Sites\$($Oasis.Site)")) {
 }
 Set-ItemProperty "IIS:\Sites\$($Oasis.Site)" -Name applicationDefaults.preloadEnabled -Value $true
 Set-ItemProperty "IIS:\Sites\$($Oasis.Site)" -Name serverAutoStart -Value $true
-# O IIS trava a seção <handlers> nos web.config por padrão (500.19): libera só para o site do Oásis.
-& $appcmd unlock config $Oasis.Site -section:system.webServer/handlers | Out-Null
+# O IIS trava a seção <handlers> nos web.config por padrão (erro 500.19): libera a seção, que o web.config do site usa.
+& $appcmd unlock config -section:system.webServer/handlers | Out-Null
 Escrever-Ok "http://*:80 -> $raiz\site (pré-carregado, inicia com o servidor)"
 
 # ------------------------------------------------------ NTFS
