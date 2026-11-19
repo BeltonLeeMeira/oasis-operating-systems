@@ -1,0 +1,55 @@
+﻿# 16-file-server-e-dfs.txt  |  SRV-OASIS  |  19/11/2026 17:30:13
+PS> Get-WindowsFeature FS-FileServer, FS-DFS-Namespace
+
+Name             InstallState
+----             ------------
+FS-FileServer       Installed
+FS-DFS-Namespace    Installed
+
+
+PS> Get-SmbShare
+
+Name     Path                          FolderEnumerationMode
+----     ----                          ---------------------
+Boletins C:\Compartilhamentos\Boletins           AccessBased
+Oasis    C:\DFSRoots\Oasis                      Unrestricted
+
+
+PS> Get-SmbShareAccess Boletins
+
+AccountName               AccessControlType AccessRight
+-----------               ----------------- -----------
+OASIS\GG_Oasis_Admins                 Allow        Full
+OASIS\GG_Oasis_Operadores             Allow      Change
+BUILTIN\Administrators                Allow        Full
+
+
+PS> icacls C:\Compartilhamentos\Boletins
+C:\Compartilhamentos\Boletins BUILTIN\Administrators:(F)
+                              OASIS\GG_Oasis_Operadores:(OI)(CI)(M)
+                              OASIS\GG_Oasis_Admins:(OI)(CI)(F)
+                              NT AUTHORITY\SYSTEM:(OI)(CI)(F)
+                              BUILTIN\Administrators:(OI)(CI)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+PS> Get-DfsnRoot / Get-DfsnFolderTarget
+
+Path                Type      State 
+----                ----      ----- 
+\\oasis.local\Oasis Domain V2 Online
+
+
+
+Path                         TargetPath           State 
+----                         ----------           ----- 
+\\oasis.local\Oasis\Boletins \\SRV-OASIS\Boletins Online
+
+
+PS> Get-ChildItem \\oasis.local\Oasis
+
+Name     FullName                    
+----     --------                    
+Boletins \\oasis.local\Oasis\Boletins
+
+
+

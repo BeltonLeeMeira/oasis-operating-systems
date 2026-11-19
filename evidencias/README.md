@@ -26,6 +26,8 @@ Duas partes: as **saídas de comandos**, geradas pelo `12-coletar-evidencias.ps1
 
 ## Prints
 
+Ficam na pasta [`prints/`](prints/). O IPv6 público da rede foi ocultado nos prints e nas saídas.
+
 | Arquivo | O que mostra |
 | --- | --- |
 | `p01-vm.png` | Configuração da VM (CPU, memória, rede externa ou bridge) |

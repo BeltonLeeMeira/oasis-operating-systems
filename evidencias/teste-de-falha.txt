@@ -1,0 +1,12 @@
+17:50:27  Início: API no ar
+17:50:37  Teste 1: processo python.exe encerrado à força
+17:50:43  Teste 1 (processo Python): voltou sozinho em 7 s
+17:51:12  Teste 2: w3wp.exe do OasisPool encerrado à força
+17:51:15  Teste 2 (processo do pool): voltou sozinho em 2 s
+17:51:50  Teste 3: processo do serviço W3SVC (PID 6732) encerrado à força
+17:51:57  Teste 3 (serviço W3SVC): voltou sozinho em 8 s
+17:52:42  Teste 4: pool OasisPool parado
+17:53:06  Teste 4 (pool parado, religado pelo vigia): voltou sozinho em 24 s
+17:54:22  Teste 5: serviço postgresql-x64-17 parado (a API responde 503: banco sem resposta)
+17:54:32    /health agora: The operation has timed out.
+17:56:32  Teste 5 (banco parado, iniciado pelo vigia): voltou sozinho em 130 s

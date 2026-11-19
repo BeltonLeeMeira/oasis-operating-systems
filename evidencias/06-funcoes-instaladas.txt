@@ -1,0 +1,58 @@
+﻿# 06-funcoes-instaladas.txt  |  SRV-OASIS  |  19/11/2026 17:39:41
+
+Name                      DisplayName                                   
+----                      -----------                                   
+AD-Domain-Services        Active Directory Domain Services              
+DNS                       DNS Server                                    
+FileAndStorage-Services   File and Storage Services                     
+File-Services             File and iSCSI Services                       
+FS-FileServer             File Server                                   
+FS-DFS-Namespace          DFS Namespaces                                
+Storage-Services          Storage Services                              
+Web-Server                Web Server (IIS)                              
+Web-WebServer             Web Server                                    
+Web-Common-Http           Common HTTP Features                          
+Web-Default-Doc           Default Document                              
+Web-Dir-Browsing          Directory Browsing                            
+Web-Http-Errors           HTTP Errors                                   
+Web-Static-Content        Static Content                                
+Web-Health                Health and Diagnostics                        
+Web-Http-Logging          HTTP Logging                                  
+Web-Log-Libraries         Logging Tools                                 
+Web-Request-Monitor       Request Monitor                               
+Web-Http-Tracing          Tracing                                       
+Web-Performance           Performance                                   
+Web-Stat-Compression      Static Content Compression                    
+Web-Security              Security                                      
+Web-Filtering             Request Filtering                             
+Web-App-Dev               Application Development                       
+Web-AppInit               Application Initialization                    
+Web-Mgmt-Tools            Management Tools                              
+Web-Mgmt-Console          IIS Management Console                        
+Web-Scripting-Tools       IIS Management Scripts and Tools              
+NET-Framework-45-Features .NET Framework 4.8 Features                   
+NET-Framework-45-Core     .NET Framework 4.8                            
+NET-WCF-Services45        WCF Services                                  
+NET-WCF-TCP-PortSharing45 TCP Port Sharing                              
+GPMC                      Group Policy Management                       
+Windows-Defender          Microsoft Defender Antivirus                  
+RSAT                      Remote Server Administration Tools            
+RSAT-Role-Tools           Role Administration Tools                     
+RSAT-AD-Tools             AD DS and AD LDS Tools                        
+RSAT-AD-PowerShell        Active Directory module for Windows PowerShell
+RSAT-ADDS                 AD DS Tools                                   
+RSAT-AD-AdminCenter       Active Directory Administrative Center        
+RSAT-ADDS-Tools           AD DS Snap-Ins and Command-Line Tools         
+RSAT-DNS-Server           DNS Server Tools                              
+RSAT-File-Services        File Services Tools                           
+RSAT-DFS-Mgmt-Con         DFS Management Tools                          
+System-DataArchiver       System Data Archiver                          
+WindowsAdminCenterSetup   Windows Admin Center Setup                    
+PowerShellRoot            Windows PowerShell                            
+PowerShell                Windows PowerShell 5.1                        
+Wireless-Networking       Wireless LAN Service                          
+WoW64-Support             WoW64 Support                                 
+XPS-Viewer                XPS Viewer                                    
+
+
+

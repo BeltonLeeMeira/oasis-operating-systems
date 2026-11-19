@@ -1,0 +1,32 @@
+﻿# 01-ipconfig.txt  |  SRV-OASIS  |  19/11/2026 17:39:25
+PS> hostname
+SRV-OASIS
+PS> ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : SRV-OASIS
+   Primary Dns Suffix  . . . . . . . : oasis.local
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : oasis.local
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Hyper-V Network Adapter
+   Physical Address. . . . . . . . . : 00-15-5D-00-F1-00
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : 2804:xxxx:(oculto)(Preferred) 
+   Link-local IPv6 Address . . . . . : fe80::be7b:61:96b9:2d66%6(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.0.224(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : fe80::9a77:e7ff:fe4e:b74%6
+                                       192.168.0.1
+   DNS Servers . . . . . . . . . . . : ::1
+                                       192.168.0.224
+                                       127.0.0.1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+

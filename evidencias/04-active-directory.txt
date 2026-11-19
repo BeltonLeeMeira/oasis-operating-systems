@@ -1,0 +1,54 @@
+﻿# 04-active-directory.txt  |  SRV-OASIS  |  19/11/2026 17:39:41
+
+
+DNSRoot           : oasis.local
+NetBIOSName       : OASIS
+DomainMode        : Windows2025Domain
+PDCEmulator       : SRV-OASIS.oasis.local
+DistinguishedName : DC=oasis,DC=local
+
+
+
+
+
+Name           : oasis.local
+ForestMode     : Windows2025Forest
+GlobalCatalogs : {SRV-OASIS.oasis.local}
+
+
+
+
+Name               DistinguishedName                            
+----               -----------------                            
+Domain Controllers OU=Domain Controllers,DC=oasis,DC=local      
+Oasis              OU=Oasis,DC=oasis,DC=local                   
+Administradores    OU=Administradores,OU=Oasis,DC=oasis,DC=local
+Operadores         OU=Operadores,OU=Oasis,DC=oasis,DC=local     
+Grupos             OU=Grupos,OU=Oasis,DC=oasis,DC=local         
+
+
+Grupo GG_Oasis_Admins:
+
+Name        SamAccountName
+----        --------------
+Admin Oásis admin.oasis   
+
+
+Grupo GG_Oasis_Operadores:
+
+Name                  SamAccountName
+----                  --------------
+Operador Vila Mariana op.vilamariana
+
+
+
+
+MinPasswordLength : 10
+ComplexityEnabled : True
+LockoutThreshold  : 5
+LockoutDuration   : 00:15:00
+MaxPasswordAge    : 90.00:00:00
+
+
+
+

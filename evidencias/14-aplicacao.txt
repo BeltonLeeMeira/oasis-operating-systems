@@ -1,0 +1,29 @@
+﻿# 14-aplicacao.txt  |  SRV-OASIS  |  19/11/2026 17:39:45
+PS> Invoke-RestMethod http://localhost/health
+{
+    "status":  "ok",
+    "banco":  "ok",
+    "mqtt":  "conectado",
+    "modelo":  "carregado (rl-2026-11-10)",
+    "leiturasMqttAceitas":  0,
+    "leiturasMqttRejeitadas":  0
+}
+PS> Invoke-RestMethod http://localhost/api/risco/agora
+{
+    "value":  [
+                  {
+                      "estacao":  "EST-VM-01",
+                      "nome":  "Vila Mariana",
+                      "temperatura":  null,
+                      "umidade":  null,
+                      "indiceCalor":  null,
+                      "nivel":  null,
+                      "recebidaEm":  null,
+                      "atualizada":  false
+                  }
+              ],
+    "Count":  1
+}
+PS> Invoke-WebRequest http://api.oasis.local/
+200
+

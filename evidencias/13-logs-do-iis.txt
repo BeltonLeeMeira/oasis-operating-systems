@@ -1,0 +1,65 @@
+﻿# 13-logs-do-iis.txt  |  SRV-OASIS  |  19/11/2026 18:01:55
+Arquivo: C:\inetpub\logs\LogFiles\W3SVC1\u_ex261119.log
+2026-11-19 20:52:04 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 2
+2026-11-19 20:53:06 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 2087
+2026-11-19 20:53:14 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 3
+2026-11-19 20:54:04 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 2
+2026-11-19 20:54:32 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 10012
+2026-11-19 20:54:38 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5010
+2026-11-19 20:54:44 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5013
+2026-11-19 20:54:50 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5000
+2026-11-19 20:54:56 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5006
+2026-11-19 20:55:02 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5008
+2026-11-19 20:55:08 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5004
+2026-11-19 20:55:14 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5002
+2026-11-19 20:55:19 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 15007
+2026-11-19 20:55:20 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 4999
+2026-11-19 20:55:26 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5010
+2026-11-19 20:55:32 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5007
+2026-11-19 20:55:38 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5012
+2026-11-19 20:55:44 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 15000
+2026-11-19 20:55:44 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5012
+2026-11-19 20:55:50 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5009
+2026-11-19 20:55:56 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5003
+2026-11-19 20:56:02 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5009
+2026-11-19 20:56:08 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5003
+2026-11-19 20:56:08 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 15002
+2026-11-19 20:56:14 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5000
+2026-11-19 20:56:20 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5002
+2026-11-19 20:56:26 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 400 0 64 5003
+2026-11-19 20:56:32 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 12951
+2026-11-19 20:56:32 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 4765
+2026-11-19 20:57:04 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 3
+2026-11-19 20:58:04 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 3
+2026-11-19 20:59:04 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 2
+2026-11-19 21:00:04 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 3
+2026-11-19 21:01:04 ::1 GET /health - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 2
+2026-11-19 21:01:18 192.168.0.224 GET / - 80 - 192.168.0.224 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 5
+2026-11-19 21:01:18 192.168.0.224 GET /api/pontos - 80 - 192.168.0.224 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 47
+2026-11-19 21:01:18 192.168.0.224 GET /api/risco/agora - 80 - 192.168.0.224 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 19
+2026-11-19 21:01:18 192.168.0.224 GET /api/previsoes/amanha - 80 - 192.168.0.224 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 422 0 0 13
+2026-11-19 21:01:18 192.168.0.224 GET /api/alertas ativos=true 80 - 192.168.0.224 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 14
+2026-11-19 21:01:18 192.168.0.224 GET /health - 80 - 192.168.0.224 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.26100.7462 - 200 0 0 2
+
+Log da API (C:\oasis\logs\api.log):
+2026-11-19 17:36:43,149 INFO oasis.modelo: Modelo rl-2026-11-10 carregado (limiar 0.55)
+2026-11-19 17:36:43,154 INFO oasis.mqtt: Coletor MQTT iniciado: broker.hivemq.com:1883, tópico oasis-rm560760/estacoes/+/leituras
+2026-11-19 17:36:43,154 INFO oasis: API Oásis no ar
+2026-11-19 17:36:55,606 INFO oasis.mqtt: Conectado ao broker MQTT e inscrito em oasis-rm560760/estacoes/+/leituras
+2026-11-19 17:50:43,604 INFO oasis.modelo: Modelo rl-2026-11-10 carregado (limiar 0.55)
+2026-11-19 17:50:43,608 INFO oasis.mqtt: Coletor MQTT iniciado: broker.hivemq.com:1883, tópico oasis-rm560760/estacoes/+/leituras
+2026-11-19 17:50:43,608 INFO oasis: API Oásis no ar
+2026-11-19 17:51:03,354 INFO oasis.mqtt: Conectado ao broker MQTT e inscrito em oasis-rm560760/estacoes/+/leituras
+2026-11-19 17:51:14,906 INFO oasis.modelo: Modelo rl-2026-11-10 carregado (limiar 0.55)
+2026-11-19 17:51:14,910 INFO oasis.mqtt: Coletor MQTT iniciado: broker.hivemq.com:1883, tópico oasis-rm560760/estacoes/+/leituras
+2026-11-19 17:51:14,910 INFO oasis: API Oásis no ar
+2026-11-19 17:51:27,386 INFO oasis.mqtt: Conectado ao broker MQTT e inscrito em oasis-rm560760/estacoes/+/leituras
+2026-11-19 17:51:57,593 INFO oasis.modelo: Modelo rl-2026-11-10 carregado (limiar 0.55)
+2026-11-19 17:51:57,596 INFO oasis.mqtt: Coletor MQTT iniciado: broker.hivemq.com:1883, tópico oasis-rm560760/estacoes/+/leituras
+2026-11-19 17:51:57,596 INFO oasis: API Oásis no ar
+2026-11-19 17:52:10,102 INFO oasis.mqtt: Conectado ao broker MQTT e inscrito em oasis-rm560760/estacoes/+/leituras
+2026-11-19 17:53:06,266 INFO oasis.modelo: Modelo rl-2026-11-10 carregado (limiar 0.55)
+2026-11-19 17:53:06,268 INFO oasis.mqtt: Coletor MQTT iniciado: broker.hivemq.com:1883, tópico oasis-rm560760/estacoes/+/leituras
+2026-11-19 17:53:06,269 INFO oasis: API Oásis no ar
+2026-11-19 17:53:18,750 INFO oasis.mqtt: Conectado ao broker MQTT e inscrito em oasis-rm560760/estacoes/+/leituras
+

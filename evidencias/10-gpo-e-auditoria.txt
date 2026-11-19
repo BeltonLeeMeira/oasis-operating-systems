@@ -1,0 +1,201 @@
+﻿# 10-gpo-e-auditoria.txt  |  SRV-OASIS  |  19/11/2026 17:39:43
+
+DisplayName                                GpoStatus ModificationTime     
+-----------                                --------- ----------------     
+Default Domain Policy             AllSettingsEnabled 11/19/2026 2:05:50 PM
+Default Domain Controllers Policy AllSettingsEnabled 11/19/2026 2:14:38 PM
+Oasis - Servidor                  AllSettingsEnabled 11/19/2026 2:15:44 PM
+Oasis - Operadores                AllSettingsEnabled 11/19/2026 2:15:44 PM
+
+
+PS> gpresult /r /scope computer
+
+Microsoft (R) Windows (R) Operating System Group Policy Result tool v2.0
+c Microsoft Corporation. All rights reserved.
+
+Created on ?11/?19/?2026 at 5:39:43 PM
+
+
+
+RSOP data for  on SRV-OASIS : Logging Mode
+-------------------------------------------
+
+OS Configuration:            Primary Domain Controller
+OS Version:                  10.0.26100
+Site Name:                   Default-First-Site-Name
+Roaming Profile:             
+Local Profile:               
+Connected over a slow link?: No
+
+
+COMPUTER SETTINGS
+------------------
+    CN=SRV-OASIS,OU=Domain Controllers,DC=oasis,DC=local
+    Last time Group Policy was applied: 11/19/2026 at 5:35:49 PM
+    Group Policy was applied from:      SRV-OASIS.oasis.local
+    Group Policy slow link threshold:   500 kbps
+    Domain Name:                        OASIS
+    Domain Type:                        Windows 2008 or later
+
+    Applied Group Policy Objects
+    -----------------------------
+        Oasis - Servidor
+        Default Domain Controllers Policy
+        Default Domain Policy
+
+    The following GPOs were not applied because they were filtered out
+    -------------------------------------------------------------------
+        Local Group Policy
+            Filtering:  Not Applied (Empty)
+
+    The computer is a part of the following security groups
+    -------------------------------------------------------
+        BUILTIN\Administrators
+        Everyone
+        BUILTIN\Pre-Windows 2000 Compatible Access
+        BUILTIN\Users
+        Windows Authorization Access Group
+        NT AUTHORITY\NETWORK
+        NT AUTHORITY\Authenticated Users
+        This Organization
+        SRV-OASIS$
+        Domain Controllers
+        NT AUTHORITY\ENTERPRISE DOMAIN CONTROLLERS
+        Authentication authority asserted identity
+        Denied RODC Password Replication Group
+        System Mandatory Level
+        
+PS> auditpol /get /category:*
+System audit policy
+
+Category/Subcategory                      Setting
+System
+  Security System Extension               No Auditing
+
+  System Integrity                        Success and Failure
+
+  IPsec Driver                            No Auditing
+
+  Other System Events                     Success and Failure
+
+  Security State Change                   Success
+
+Logon/Logoff
+  Logon                                   Success and Failure
+
+  Logoff                                  Success
+
+  Account Lockout                         Success and Failure
+
+  IPsec Main Mode                         No Auditing
+
+  IPsec Quick Mode                        No Auditing
+
+  IPsec Extended Mode                     No Auditing
+
+  Special Logon                           Success
+
+  Other Logon/Logoff Events               No Auditing
+
+  Network Policy Server                   Success and Failure
+
+  User / Device Claims                    No Auditing
+
+  Group Membership                        No Auditing
+
+  Access Rights                           No Auditing
+
+Object Access
+  File System                             Success and Failure
+
+  Registry                                No Auditing
+
+  Kernel Object                           No Auditing
+
+  SAM                                     No Auditing
+
+  Certification Services                  No Auditing
+
+  Application Generated                   No Auditing
+
+  Handle Manipulation                     No Auditing
+
+  File Share                              No Auditing
+
+  Filtering Platform Packet Drop          No Auditing
+
+  Filtering Platform Connection           No Auditing
+
+  Other Object Access Events              No Auditing
+
+  Detailed File Share                     No Auditing
+
+  Removable Storage                       No Auditing
+
+  Central Policy Staging                  No Auditing
+
+Privilege Use
+  Non Sensitive Privilege Use             No Auditing
+
+  Other Privilege Use Events              No Auditing
+
+  Sensitive Privilege Use                 No Auditing
+
+Detailed Tracking
+  Process Creation                        No Auditing
+
+  Process Termination                     No Auditing
+
+  DPAPI Activity                          No Auditing
+
+  RPC Events                              No Auditing
+
+  Plug and Play Events                    No Auditing
+
+  Token Right Adjusted Events             No Auditing
+
+Policy Change
+  Audit Policy Change                     Success and Failure
+
+  Authentication Policy Change            Success
+
+  Authorization Policy Change             No Auditing
+
+  MPSSVC Rule-Level Policy Change         No Auditing
+
+  Filtering Platform Policy Change        No Auditing
+
+  Other Policy Change Events              No Auditing
+
+Account Management
+  Computer Account Management             Success
+
+  Security Group Management               Success and Failure
+
+  Distribution Group Management           No Auditing
+
+  Application Group Management            No Auditing
+
+  Other Account Management Events         No Auditing
+
+  User Account Management                 Success and Failure
+
+DS Access
+  Directory Service Access                Success
+
+  Directory Service Changes               No Auditing
+
+  Directory Service Replication           No Auditing
+
+  Detailed Directory Service Replication  No Auditing
+
+Account Logon
+  Kerberos Service Ticket Operations      Success
+
+  Other Account Logon Events              No Auditing
+
+  Kerberos Authentication Service         Success
+
+  Credential Validation                   Success
+
+

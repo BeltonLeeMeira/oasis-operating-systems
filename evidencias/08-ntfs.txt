@@ -1,0 +1,55 @@
+﻿# 08-ntfs.txt  |  SRV-OASIS  |  19/11/2026 17:39:42
+PS> icacls C:\oasis\
+C:\oasis\ BUILTIN\Administrators:(F)
+          NT AUTHORITY\SYSTEM:(OI)(CI)(F)
+          BUILTIN\Administrators:(OI)(CI)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+PS> icacls C:\oasis\site
+C:\oasis\site BUILTIN\Administrators:(F)
+              IIS APPPOOL\OasisPool:(OI)(CI)(RX)
+              NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+              BUILTIN\Administrators:(I)(OI)(CI)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+PS> icacls C:\oasis\api
+C:\oasis\api BUILTIN\Administrators:(F)
+             IIS APPPOOL\OasisPool:(OI)(CI)(RX)
+             NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+             BUILTIN\Administrators:(I)(OI)(CI)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+PS> icacls C:\oasis\ml
+C:\oasis\ml BUILTIN\Administrators:(F)
+            IIS APPPOOL\OasisPool:(OI)(CI)(RX)
+            NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+            BUILTIN\Administrators:(I)(OI)(CI)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+PS> icacls C:\oasis\config
+C:\oasis\config BUILTIN\Administrators:(F)
+                IIS APPPOOL\OasisPool:(OI)(CI)(R)
+                NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+                BUILTIN\Administrators:(I)(OI)(CI)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+PS> icacls C:\oasis\config\oasis.env
+C:\oasis\config\oasis.env IIS APPPOOL\OasisPool:(I)(R)
+                          NT AUTHORITY\SYSTEM:(I)(F)
+                          BUILTIN\Administrators:(I)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+PS> icacls C:\oasis\logs
+C:\oasis\logs BUILTIN\Administrators:(F)
+              IIS APPPOOL\OasisPool:(OI)(CI)(M)
+              NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+              BUILTIN\Administrators:(I)(OI)(CI)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+PS> icacls C:\oasis\scripts
+C:\oasis\scripts BUILTIN\Administrators:(F)
+                 NT AUTHORITY\SYSTEM:(OI)(CI)(F)
+                 BUILTIN\Administrators:(OI)(CI)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+

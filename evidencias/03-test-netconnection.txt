@@ -1,0 +1,38 @@
+﻿# 03-test-netconnection.txt  |  SRV-OASIS  |  19/11/2026 17:39:25
+PS> Test-NetConnection api.oasis.local -Port 80
+
+
+ComputerName     : api.oasis.local
+RemoteAddress    : 192.168.0.224
+RemotePort       : 80
+InterfaceAlias   : Ethernet
+SourceAddress    : 192.168.0.224
+TcpTestSucceeded : True
+
+
+
+PS> Test-NetConnection localhost -Port 5432   (banco, só local)
+
+
+ComputerName     : localhost
+RemoteAddress    : ::1
+RemotePort       : 5432
+InterfaceAlias   : Loopback Pseudo-Interface 1
+SourceAddress    : ::1
+TcpTestSucceeded : True
+
+
+
+PS> Test-NetConnection broker.hivemq.com -Port 1883   (saída para o broker MQTT)
+
+
+ComputerName     : broker.hivemq.com
+RemoteAddress    : 3.121.48.155
+RemotePort       : 1883
+InterfaceAlias   : Ethernet
+SourceAddress    : 192.168.0.224
+TcpTestSucceeded : True
+
+
+
+

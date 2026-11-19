@@ -1,0 +1,54 @@
+﻿# 11-monitoramento.txt  |  SRV-OASIS  |  19/11/2026 17:39:44
+PS> logman query
+
+Data Collector Set                      Type                          Status
+-------------------------------------------------------------------------------
+Oasis-Alertas                           Alert                         Running 
+Oasis-Desempenho                        Counter                       Running 
+Server Manager Performance Monitor      Counter                       Stopped 
+
+The command completed successfully.
+PS> logman query Oasis-Desempenho
+
+Name:                 Oasis-Desempenho
+Status:               Running
+Root Path:            C:\oasis\logs\perfmon\
+Segment:              Off
+Schedules:            On
+Segment Max Size:     256 MB
+Run as:               SYSTEM
+
+Name:                 Oasis-Desempenho\Oasis-Desempenho
+Type:                 Counter
+Output Location:      C:\oasis\logs\perfmon\desempenho_000001.blg
+Append:               Off
+Circular:             On
+Overwrite:            Off
+Sample Interval:      15 second(s)
+
+Counters:
+  \Processor(_Total)\% Processor Time
+  \Memory\Available MBytes
+  \LogicalDisk(C:)\% Free Space
+  \Web Service(_Total)\Current Connections
+  \Process(python)\% Processor Time
+  \Process(python)\Working Set
+
+The command completed successfully.
+
+TimeCreated           Message                                                                                                                                                                                              
+-----------           -------                                                                                                                                                                                              
+11/19/2026 4:13:30 PM Performance counter \Processor(_Total)\% Processor Time has tripped its alert threshold. The counter value of 92.861768 is over the limit value of 85.000000. 85.000000 is the alert threshold value.
+11/19/2026 4:13:15 PM Performance counter \Processor(_Total)\% Processor Time has tripped its alert threshold. The counter value of 94.064655 is over the limit value of 85.000000. 85.000000 is the alert threshold value.
+11/19/2026 4:13:00 PM Performance counter \Processor(_Total)\% Processor Time has tripped its alert threshold. The counter value of 92.033719 is over the limit value of 85.000000. 85.000000 is the alert threshold value.
+11/19/2026 4:12:45 PM Performance counter \Processor(_Total)\% Processor Time has tripped its alert threshold. The counter value of 91.525492 is over the limit value of 85.000000. 85.000000 is the alert threshold value.
+11/19/2026 4:12:30 PM Performance counter \Processor(_Total)\% Processor Time has tripped its alert threshold. The counter value of 93.156976 is over the limit value of 85.000000. 85.000000 is the alert threshold value.
+11/19/2026 4:12:15 PM Performance counter \Processor(_Total)\% Processor Time has tripped its alert threshold. The counter value of 90.313660 is over the limit value of 85.000000. 85.000000 is the alert threshold value.
+11/19/2026 4:07:00 PM Performance counter \Processor(_Total)\% Processor Time has tripped its alert threshold. The counter value of 98.669379 is over the limit value of 85.000000. 85.000000 is the alert threshold value.
+11/19/2026 4:06:45 PM Performance counter \Processor(_Total)\% Processor Time has tripped its alert threshold. The counter value of 96.037748 is over the limit value of 85.000000. 85.000000 is the alert threshold value.
+11/19/2026 4:06:30 PM Performance counter \Processor(_Total)\% Processor Time has tripped its alert threshold. The counter value of 99.784816 is over the limit value of 85.000000. 85.000000 is the alert threshold value.
+11/19/2026 4:06:16 PM Performance counter \Processor(_Total)\% Processor Time has tripped its alert threshold. The counter value of 99.796683 is over the limit value of 85.000000. 85.000000 is the alert threshold value.
+11/19/2026 4:06:00 PM Performance counter \Processor(_Total)\% Processor Time has tripped its alert threshold. The counter value of 96.840772 is over the limit value of 85.000000. 85.000000 is the alert threshold value.
+
+
+

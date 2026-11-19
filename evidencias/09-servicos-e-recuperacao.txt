@@ -1,0 +1,52 @@
+﻿# 09-servicos-e-recuperacao.txt  |  SRV-OASIS  |  19/11/2026 17:39:42
+
+Name               Status StartType
+----               ------ ---------
+postgresql-x64-17 Running Automatic
+W3SVC             Running Automatic
+WAS               Running    Manual
+
+
+PS> sc.exe qfailure WAS
+[SC] QueryServiceConfig2 SUCCESS
+
+SERVICE_NAME: WAS
+        RESET_PERIOD (in seconds)    : 86400
+        REBOOT_MESSAGE               : 
+        COMMAND_LINE                 : 
+        FAILURE_ACTIONS              : RESTART -- Delay = 5000 milliseconds.
+                                       RESTART -- Delay = 10000 milliseconds.
+                                       RESTART -- Delay = 30000 milliseconds.
+
+PS> sc.exe qfailure W3SVC
+[SC] QueryServiceConfig2 SUCCESS
+
+SERVICE_NAME: W3SVC
+        RESET_PERIOD (in seconds)    : 86400
+        REBOOT_MESSAGE               : 
+        COMMAND_LINE                 : 
+        FAILURE_ACTIONS              : RESTART -- Delay = 5000 milliseconds.
+                                       RESTART -- Delay = 10000 milliseconds.
+                                       RESTART -- Delay = 30000 milliseconds.
+
+PS> sc.exe qfailure postgresql-x64-17
+[SC] QueryServiceConfig2 SUCCESS
+
+SERVICE_NAME: postgresql-x64-17
+        RESET_PERIOD (in seconds)    : 86400
+        REBOOT_MESSAGE               : 
+        COMMAND_LINE                 : 
+        FAILURE_ACTIONS              : RESTART -- Delay = 5000 milliseconds.
+                                       RESTART -- Delay = 10000 milliseconds.
+                                       RESTART -- Delay = 30000 milliseconds.
+
+
+TaskName              State
+--------              -----
+Oasis-Monitoramento   Ready
+Oasis-Vigia           Ready
+Oasis-Alertas       Running
+Oasis-Desempenho    Running
+
+
+

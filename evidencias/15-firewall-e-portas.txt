@@ -1,0 +1,48 @@
+﻿# 15-firewall-e-portas.txt  |  SRV-OASIS  |  19/11/2026 17:39:45
+
+Regra                         Ativa  Acao Origens                  
+-----                         -----  ---- -------                  
+WINRM-HTTP-In-TCP              True Allow 192.168.0.0/255.255.255.0
+RemoteDesktop-UserMode-In-TCP  True Allow 192.168.0.0/255.255.255.0
+FPS-ICMP4-ERQ-In               True Allow LocalSubnet              
+IIS-WebServerRole-HTTP-In-TCP  True Allow Any                      
+Oasis-Bloqueia-PostgreSQL      True Block Any                      
+
+
+
+LocalAddress                         LocalPort OwningProcess
+------------                         --------- -------------
+2804:xxxx:(oculto)        53          1440
+::                                          80             4
+::                                          88           828
+::                                         135           572
+192.168.0.224                              139             4
+::                                         389           828
+::                                         445             4
+::                                         464           828
+::                                         593           572
+0.0.0.0                                    636           828
+::                                        3268           828
+0.0.0.0                                   3269           828
+::                                        3389          1080
+127.0.0.1                                 5432          2280
+::                                        5985             4
+::                                        9389          4000
+127.0.0.1                                12687          9992
+::                                       47001             4
+0.0.0.0                                  49664           828
+0.0.0.0                                  49665           672
+0.0.0.0                                  49670          1436
+0.0.0.0                                  49671          2332
+::                                       49672          2348
+::                                       49675           828
+::                                       49676          2448
+::                                       49691           828
+::                                       49692           828
+::                                       49698           812
+0.0.0.0                                  49718           828
+::                                       49739          1440
+::                                       59945          4092
+
+
+

@@ -1,0 +1,25 @@
+﻿# 05-dns.txt  |  SRV-OASIS  |  19/11/2026 17:39:41
+
+ZoneName               ZoneType IsDsIntegrated IsReverseLookupZone
+--------               -------- -------------- -------------------
+_msdcs.oasis.local     Primary            True               False
+0.168.192.in-addr.arpa Primary            True                True
+0.in-addr.arpa         Primary           False                True
+127.in-addr.arpa       Primary           False                True
+255.in-addr.arpa       Primary           False                True
+oasis.local            Primary            True               False
+
+
+
+HostName RecordType Type Timestamp TimeToLive RecordData   
+-------- ---------- ---- --------- ---------- ----------   
+api      A          1    0         01:00:00   192.168.0.224
+
+
+
+
+IPAddress : {1.1.1.1, 8.8.8.8}
+
+
+
+

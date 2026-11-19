@@ -1,0 +1,137 @@
+﻿# 07-iis.txt  |  SRV-OASIS  |  19/11/2026 17:39:42
+
+name  state   physicalPath  applicationPool
+----  -----   ------------  ---------------
+Oasis Started C:\oasis\site OasisPool      
+
+
+
+protocol bindingInformation
+-------- ------------------
+http     *:80:             
+
+
+PS> appcmd list apppool OasisPool /text:*
+APPPOOL
+  APPPOOL.NAME:"OasisPool"
+  PipelineMode:"Integrated"
+  RuntimeVersion:""
+  state:"Started"
+  [add] 
+    name:"OasisPool" 
+    queueLength:"1000" 
+    autoStart:"true" 
+    enable32BitAppOnWin64:"false" 
+    enableEmulationOnWinArm64:"true" 
+    managedRuntimeVersion:"" 
+    managedRuntimeLoader:"webengine4.dll" 
+    enableConfigurationOverride:"true" 
+    managedPipelineMode:"Integrated" 
+    CLRConfigFile:"" 
+    passAnonymousToken:"true" 
+    startMode:"AlwaysRunning" 
+    [processModel] 
+      identityType:"ApplicationPoolIdentity" 
+      userName:"" 
+      password:"" 
+      requestQueueDelegatorIdentity:"" 
+      loadUserProfile:"false" 
+      setProfileEnvironment:"true" 
+      logonType:"LogonBatch" 
+      manualGroupMembership:"false" 
+      idleTimeout:"00:00:00" 
+      idleTimeoutAction:"Terminate" 
+      maxProcesses:"1" 
+      shutdownTimeLimit:"00:01:30" 
+      startupTimeLimit:"00:01:30" 
+      pingingEnabled:"true" 
+      pingInterval:"00:00:30" 
+      pingResponseTime:"00:01:30" 
+      logEventOnProcessModel:"IdleTimeout" 
+    [recycling] 
+      disallowOverlappingRotation:"false" 
+      disallowRotationOnConfigChange:"false" 
+      logEventOnRecycle:"Time, Requests, Schedule, Memory, IsapiUnhealthy, OnDemand, ConfigChange, PrivateMemory" 
+      [periodicRestart] 
+        memory:"0" 
+        privateMemory:"0" 
+        requests:"0" 
+        time:"00:00:00" 
+        [schedule] 
+          [add] 
+            value:"04:00:00" 
+    [failure] 
+      loadBalancerCapabilities:"HttpLevel" 
+      orphanWorkerProcess:"false" 
+      orphanActionExe:"" 
+      orphanActionParams:"" 
+      rapidFailProtection:"true" 
+      rapidFailProtectionInterval:"00:05:00" 
+      rapidFailProtectionMaxCrashes:"5" 
+      autoShutdownExe:"" 
+      autoShutdownParams:"" 
+    [cpu] 
+      limit:"0" 
+      action:"NoAction" 
+      resetInterval:"00:05:00" 
+      smpAffinitized:"false" 
+      smpProcessorAffinityMask:"4294967295" 
+      smpProcessorAffinityMask2:"4294967295" 
+      processorGroup:"0" 
+      numaNodeAssignment:"MostAvailableMemory" 
+      numaNodeAffinityMode:"Soft" 
+    [environmentVariables] 
+
+
+name  : httpPlatformHandler
+image : %SystemRoot%\system32\inetsrv\httpPlatformHandler.dll
+
+
+
+PS> & C:\oasis\api\.venv\Scripts\python.exe --version
+Python 3.13.17
+PS> Get-Content C:\oasis\site\web.config
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Hospedagem da API OÃ¡sis no IIS (Windows Server) com o HttpPlatformHandler.
+  O IIS recebe as requisiÃ§Ãµes na porta 80 e repassa para o processo Python (uvicorn),
+  que ele mesmo inicia, monitora e reinicia se cair.
+
+  Estrutura no servidor (ver o repositÃ³rio oasis-operating-systems):
+    C:\oasis\site\web.config        este arquivo (pasta fÃ­sica do site no IIS)
+    C:\oasis\api\                   cÃ³digo da API + .venv
+    C:\oasis\ml\modelo\             modelo de IA
+    C:\oasis\config\oasis.env       segredos (NTFS: sÃ³ OasisPool e Administradores)
+    C:\oasis\logs\                  logs da API e do uvicorn
+-->
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="OasisPython" path="*" verb="*" modules="httpPlatformHandler" resourceType="Unspecified" requireAccess="Script" />
+    </handlers>
+    <httpPlatform processPath="C:\oasis\api\.venv\Scripts\python.exe"
+                  arguments="-m uvicorn oasis_api.main:criar_app --factory --host 127.0.0.1 --port %HTTP_PLATFORM_PORT% --app-dir C:\oasis\api --no-server-header --proxy-headers --forwarded-allow-ips 127.0.0.1"
+                  stdoutLogEnabled="true"
+                  stdoutLogFile="C:\oasis\logs\uvicorn"
+                  startupTimeLimit="60"
+                  startupRetryCount="3"
+                  rapidFailsPerMinute="10"
+                  processesPerApplication="1">
+      <environmentVariables>
+        <environmentVariable name="OASIS_ENV_FILE" value="C:\oasis\config\oasis.env" />
+        <environmentVariable name="OASIS_LOG_ARQUIVO" value="C:\oasis\logs\api.log" />
+        <environmentVariable name="PYTHONUNBUFFERED" value="1" />
+      </environmentVariables>
+    </httpPlatform>
+    <security>
+      <!-- NÃ£o anuncia "Microsoft-IIS/10.0" nas respostas -->
+      <requestFiltering removeServerHeader="true" />
+    </security>
+    <httpProtocol>
+      <customHeaders>
+        <remove name="X-Powered-By" />
+      </customHeaders>
+    </httpProtocol>
+  </system.webServer>
+</configuration>
+

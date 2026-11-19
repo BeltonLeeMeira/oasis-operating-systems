@@ -1,0 +1,46 @@
+﻿# 02-nslookup.txt  |  SRV-OASIS  |  19/11/2026 17:39:25
+PS> nslookup api.oasis.local
+Server:  UnKnown
+Address:  ::1
+
+Name:    api.oasis.local
+Address:  192.168.0.224
+
+PS> nslookup SRV-OASIS
+Server:  UnKnown
+Address:  ::1
+
+Name:    SRV-OASIS.oasis.local
+Addresses:  2804:xxxx:(oculto)
+	  192.168.0.224
+
+PS> nslookup 192.168.0.224
+Server:  UnKnown
+Address:  ::1
+
+Name:    SRV-OASIS.oasis.local
+Address:  192.168.0.224
+
+PS> nslookup broker.hivemq.com   (encaminhadores)
+nslookup : Non-authoritative answer:
+At C:\instaladores\oasis-operating-systems\roteiro\12-coletar-evidencias.ps1:20 char:59
++ ... okup $($Oasis.MqttHost)   (encaminhadores)"; nslookup $Oasis.MqttHost
++                                                  ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Non-authoritative answer::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Server:  UnKnown
+Address:  ::1
+
+Name:    broker.hivemq.com
+Addresses:  2a01:578:13::379:309b
+	  2a01:578:13::340:e98d
+	  2a01:578:13::129e:a782
+	  2a01:578:13::129d:dd59
+	  18.158.167.130
+	  3.121.48.155
+	  18.157.221.89
+	  3.64.233.141
+
+
