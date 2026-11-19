@@ -10,6 +10,8 @@ Escrever-Passo 'Funções Servidor de Arquivos e Namespaces DFS'
 Install-WindowsFeature -Name FS-FileServer, FS-DFS-Namespace -IncludeManagementTools | Format-Table -AutoSize
 
 $netbios = $Oasis.NetBIOS
+# Grupo Administradores interno pelo SID (o nome muda com o idioma do Windows).
+$admins = ([Security.Principal.SecurityIdentifier]'S-1-5-32-544').Translate([Security.Principal.NTAccount]).Value
 $boletins = 'C:\Compartilhamentos\Boletins'
 $raizDfs = 'C:\DFSRoots\Oasis'
 New-Item -ItemType Directory -Force -Path $boletins, $raizDfs | Out-Null
@@ -20,11 +22,15 @@ icacls $boletins
 
 Escrever-Passo 'Compartilhamentos SMB'
 if (-not (Get-SmbShare -Name 'Boletins' -ErrorAction SilentlyContinue)) {
-    New-SmbShare -Name 'Boletins' -Path $boletins -FullAccess "$netbios\GG_Oasis_Admins" -ChangeAccess "$netbios\GG_Oasis_Operadores" `
+    New-SmbShare -Name 'Boletins' -Path $boletins -FullAccess $admins, "$netbios\GG_Oasis_Admins" -ChangeAccess "$netbios\GG_Oasis_Operadores" `
         -FolderEnumerationMode AccessBased | Out-Null
 }
 if (-not (Get-SmbShare -Name 'Oasis' -ErrorAction SilentlyContinue)) {
-    New-SmbShare -Name 'Oasis' -Path $raizDfs -ReadAccess "$netbios\GG_Oasis_Operadores" -FullAccess "$netbios\GG_Oasis_Admins" | Out-Null
+    New-SmbShare -Name 'Oasis' -Path $raizDfs -ReadAccess "$netbios\GG_Oasis_Operadores" -FullAccess $admins, "$netbios\GG_Oasis_Admins" | Out-Null
+}
+# Administradores do servidor (inclui OASIS\Administrator) também entram nos dois compartilhamentos.
+foreach ($nome in 'Boletins', 'Oasis') {
+    Grant-SmbShareAccess -Name $nome -AccountName $admins -AccessRight Full -Force | Out-Null
 }
 Get-SmbShare -Name 'Boletins', 'Oasis' | Format-Table Name, Path, FolderEnumerationMode -AutoSize
 
@@ -46,5 +52,5 @@ Salvar-Evidencia '16-file-server-e-dfs.txt' {
     "PS> icacls $boletins"; icacls $boletins
     "PS> Get-DfsnRoot / Get-DfsnFolderTarget"; Get-DfsnRoot -Path $namespace | Format-Table Path, Type, State -AutoSize
     Get-DfsnFolderTarget -Path "$namespace\Boletins" | Format-Table Path, TargetPath, State -AutoSize
-    "PS> Get-ChildItem $namespace"; Get-ChildItem $namespace | Format-Table Name, FullName -AutoSize
+    "PS> Get-ChildItem $namespace"; Get-ChildItem $namespace -ErrorAction Continue | Format-Table Name, FullName -AutoSize
 }
